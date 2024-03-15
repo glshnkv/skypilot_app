@@ -42,7 +42,17 @@ flutter:
 
   assets:
      - assets/images/
-
+     - assets/images/onboarding/
+     - assets/images/elements/
+     - assets/images/puzzle/
+     - assets/images/puzzle/1/
+     - assets/images/puzzle/2/
+     - assets/images/puzzle/3/
+     - assets/images/puzzle/4/
+     - assets/images/puzzle/5/
+     - assets/images/puzzle/6/
+     - assets/images/news/
+     - assets/images/settings/
 
   fonts:
     - family: Roboto
