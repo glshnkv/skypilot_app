@@ -22,6 +22,7 @@ dependencies:
   firebase_messaging: ^14.2.2
   firebase_core: ^2.21.0
   firebase_remote_config: ^4.3.3
+  lottie: ^3.1.0
 
   cupertino_icons: ^1.0.2
 
@@ -53,6 +54,7 @@ flutter:
      - assets/images/puzzle/6/
      - assets/images/news/
      - assets/images/settings/
+     - assets/images/flapping-plane/
 
   fonts:
     - family: Roboto

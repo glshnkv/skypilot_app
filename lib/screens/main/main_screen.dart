@@ -2,6 +2,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:skypilot_app/screens/flapping_plane/flapping_plane_list/flapping_plane_list_screen.dart';
 import 'package:skypilot_app/screens/news/news_list/news_list_screen.dart';
 import 'package:skypilot_app/screens/puzzle/puzzle_list/puzzle_list_screen.dart';
 import 'package:skypilot_app/screens/settings/settings_screen.dart';
@@ -18,7 +19,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
-  final _tabs = [Container(), PuzzleListScreen(), NewsListScreen(), SettingsScreen()];
+  final _tabs = [FlappingPlaneListScreen(), PuzzleListScreen(), NewsListScreen(), SettingsScreen()];
 
   @override
   Widget build(BuildContext context) {

@@ -15,6 +15,33 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    EnterCoinsRoute.name: (routeData) {
+      final args = routeData.argsAs<EnterCoinsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: EnterCoinsScreen(
+          key: args.key,
+          plane: args.plane,
+        ),
+      );
+    },
+    FlappingPlaneGameRoute.name: (routeData) {
+      final args = routeData.argsAs<FlappingPlaneGameRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: FlappingPlaneGameScreen(
+          key: args.key,
+          plane: args.plane,
+          coins: args.coins,
+        ),
+      );
+    },
+    FlappingPlaneListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FlappingPlaneListScreen(),
+      );
+    },
     MainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -59,6 +86,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const PuzzleListScreen(),
       );
     },
+    ResultRoute.name: (routeData) {
+      final args = routeData.argsAs<ResultRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ResultScreen(
+          key: args.key,
+          result: args.result,
+          coins: args.coins,
+        ),
+      );
+    },
     SettingsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -66,6 +104,101 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [EnterCoinsScreen]
+class EnterCoinsRoute extends PageRouteInfo<EnterCoinsRouteArgs> {
+  EnterCoinsRoute({
+    Key? key,
+    required PlaneModel plane,
+    List<PageRouteInfo>? children,
+  }) : super(
+          EnterCoinsRoute.name,
+          args: EnterCoinsRouteArgs(
+            key: key,
+            plane: plane,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'EnterCoinsRoute';
+
+  static const PageInfo<EnterCoinsRouteArgs> page =
+      PageInfo<EnterCoinsRouteArgs>(name);
+}
+
+class EnterCoinsRouteArgs {
+  const EnterCoinsRouteArgs({
+    this.key,
+    required this.plane,
+  });
+
+  final Key? key;
+
+  final PlaneModel plane;
+
+  @override
+  String toString() {
+    return 'EnterCoinsRouteArgs{key: $key, plane: $plane}';
+  }
+}
+
+/// generated route for
+/// [FlappingPlaneGameScreen]
+class FlappingPlaneGameRoute extends PageRouteInfo<FlappingPlaneGameRouteArgs> {
+  FlappingPlaneGameRoute({
+    Key? key,
+    required PlaneModel plane,
+    required int coins,
+    List<PageRouteInfo>? children,
+  }) : super(
+          FlappingPlaneGameRoute.name,
+          args: FlappingPlaneGameRouteArgs(
+            key: key,
+            plane: plane,
+            coins: coins,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'FlappingPlaneGameRoute';
+
+  static const PageInfo<FlappingPlaneGameRouteArgs> page =
+      PageInfo<FlappingPlaneGameRouteArgs>(name);
+}
+
+class FlappingPlaneGameRouteArgs {
+  const FlappingPlaneGameRouteArgs({
+    this.key,
+    required this.plane,
+    required this.coins,
+  });
+
+  final Key? key;
+
+  final PlaneModel plane;
+
+  final int coins;
+
+  @override
+  String toString() {
+    return 'FlappingPlaneGameRouteArgs{key: $key, plane: $plane, coins: $coins}';
+  }
+}
+
+/// generated route for
+/// [FlappingPlaneListScreen]
+class FlappingPlaneListRoute extends PageRouteInfo<void> {
+  const FlappingPlaneListRoute({List<PageRouteInfo>? children})
+      : super(
+          FlappingPlaneListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FlappingPlaneListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -198,6 +331,48 @@ class PuzzleListRoute extends PageRouteInfo<void> {
   static const String name = 'PuzzleListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ResultScreen]
+class ResultRoute extends PageRouteInfo<ResultRouteArgs> {
+  ResultRoute({
+    Key? key,
+    required String result,
+    required double coins,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ResultRoute.name,
+          args: ResultRouteArgs(
+            key: key,
+            result: result,
+            coins: coins,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ResultRoute';
+
+  static const PageInfo<ResultRouteArgs> page = PageInfo<ResultRouteArgs>(name);
+}
+
+class ResultRouteArgs {
+  const ResultRouteArgs({
+    this.key,
+    required this.result,
+    required this.coins,
+  });
+
+  final Key? key;
+
+  final String result;
+
+  final double coins;
+
+  @override
+  String toString() {
+    return 'ResultRouteArgs{key: $key, result: $result, coins: $coins}';
+  }
 }
 
 /// generated route for
