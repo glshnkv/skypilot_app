@@ -107,8 +107,20 @@ class _EnterCoinsScreenState extends State<EnterCoinsScreen> {
           text: 'Start',
           width: 350,
           onTap: () {
-            context.router.push(FlappingPlaneGameRoute(
-                plane: widget.plane, coins: int.parse(_controller.text)));
+            if (_controller.text.isNotEmpty) {
+              context.router.push(FlappingPlaneGameRoute(
+                  plane: widget.plane, coins: int.parse(_controller.text)));
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: AppColors.blue,
+                  content: Text(
+                    'Firstly, enter goal coins!',
+                    style: TextStyle(color: AppColors.white),
+                  ),
+                ),
+              );
+            }
           }),
     );
   }

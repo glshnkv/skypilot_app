@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444436056190",
+    "project_id": "skypilot-app",
+    "storage_bucket": "skypilot-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444436056190:android:f5552e5f1ace5d50b2702f",
+        "android_client_info": {
+          "package_name": "com.example.skypilot_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe0Me2xvD4U0CophF-EcCehk4suAsGWn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
