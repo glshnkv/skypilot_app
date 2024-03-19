@@ -35,7 +35,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-                widget.coins != 0 ? Row(
+                widget.result != 'Lose' ? Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [

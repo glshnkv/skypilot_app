@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skypilot_app/firebase_options.dart';
+import 'package:skypilot_app/screens/flapping_plane/coins_bloc/coins_bloc.dart';
 import 'package:skypilot_app/skypilot_app.dart';
 
 void main() async {
@@ -20,8 +22,12 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  runApp(
-    FutureBuilder<bool>(
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider<CoinsBloc>(
+          create: (context) => CoinsBloc()),
+    ],
+    child:  FutureBuilder<bool>(
       future: checkModelsForRepair(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -47,7 +53,7 @@ void main() async {
         }
       },
     ),
-  );
+  ));
 }
 
 String repairData = '';
